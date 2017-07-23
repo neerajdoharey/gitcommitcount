@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'git_commit#index'
+  root :to => 'git_commit#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'change_branch', to: 'git_commit#change_branch'
+  get 'list_branches', to: 'git_commit#list_branches'
+  post ':controller(/:action(/:id))(.:format)'
+  get ':controller(/:action(/:id))(.:format)'
 end
